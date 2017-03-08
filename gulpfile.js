@@ -1,4 +1,3 @@
-debugger;
 var gulp = require('gulp'),
 watch = require('gulp-watch'),
 postcss = require('gulp-postcss'),
@@ -6,7 +5,8 @@ autoprefixer = require('autoprefixer'),
 cssvars = require('postcss-simple-vars'),
 nested = require('postcss-nested'),
 plumber = require('gulp-plumber'),
-debug = require('gulp-debug');
+debug = require('gulp-debug'),
+cssimport = require('postcss-import') ;
 
 var path = {
   scripts: ['', ''],
@@ -24,7 +24,7 @@ gulp.task('html', function() {
 
 gulp.task('styles', function() {
   return gulp.src(path.styles)
-    .pipe(postcss([cssvars, nested, autoprefixer]))
+    .pipe(postcss([cssimport, cssvars, nested, autoprefixer]))
     .pipe(gulp.dest('./app/temp/styles'))
 });
 
