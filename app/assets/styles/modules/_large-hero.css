@@ -6,6 +6,11 @@ Modifier [large.hero__text-content--hidden])
 
 .large-hero {
   position: relative;
+  border-bottom: 10px solid $mainBlue;
+
+  &__image {
+    display: block;
+  }
 
   &__text-content {
     position: absolute;
@@ -21,25 +26,39 @@ Modifier [large.hero__text-content--hidden])
   &__title {
     font-weight:300;
     color: $mainBlue;
-    font-size:4.8rem;
+    font-size:2.6rem;
     /* rem relative to the default font-size (~16px) of the browser/user */
     margin:0;
+
+/* s. _mixin.css / postcss-mixin */
+/* DEFAULT = MOBILE VIEW --> Mobile First */
+    @mixin atSmall{
+      font-size: 4.8rem;
+    }
   }
 
   &__subtitle {
     font-weight:300;
     color: $mainBlue;
-    font-size:2.9rem;
+    font-size:1.7rem;
     margin:0;
+
+    @mixin atSmall {
+      font-size:2.9rem;
+    }
   }
   &__description {
     color: #FFF;
-    font-size: 1.875rem;
+    font-size: 1.4rem;
     font-weight:100;
     text-shadow: 2px 2px 0 rgba(0,0,0,.1);
     /* Line break (Zeilenumbruch) and centering the description*/
     max-width:30rem; /*480px/16px(default font size)=30rem*/
     margin-left:auto;
     margin-right:auto;
+
+    @mixin atSmall {
+      font-size: 1.875rem;
+    }
   }
 }

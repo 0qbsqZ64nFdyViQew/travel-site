@@ -3,7 +3,8 @@ postcss = require('gulp-postcss'),
 autoprefixer = require('autoprefixer'),
 cssvars = require('postcss-simple-vars'),
 nested = require('postcss-nested'),
-cssimport = require('postcss-import');
+cssimport = require('postcss-import'),
+mixins = require('postcss-mixins');
 
 var path = {
   scripts: ['', ''],
@@ -13,7 +14,7 @@ var path = {
 
 gulp.task('styles', function() {
   return gulp.src(path.styles)
-    .pipe(postcss([cssimport, cssvars, nested, autoprefixer]))
+    .pipe(postcss([cssimport, mixins, cssvars, nested, autoprefixer]))
     .on('error', function(errorInfo){
       console.log(errorInfo.toString());
 /* logs the error in compact form (toString()) */
