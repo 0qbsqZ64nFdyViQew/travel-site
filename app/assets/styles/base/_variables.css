@@ -1,0 +1,4 @@
+/* CSS files only for variables
+--> postcss-simple-vars gulp plugin does the magic */
+$mainBlue: #2f5572;
+$mainOrange: #d59541;

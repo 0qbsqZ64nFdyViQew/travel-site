@@ -460,22 +460,6 @@ template {
   display: none;
 }
 
-.large-hero {
-  position: relative;
-}
-
-.large-hero__text-content {
-  position: absolute;
-  /* centering hozizantally */
-  top:50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  left: 0;
-  /* centering vertically */
-  width: 100%;
-  text-align: center;
-}
-
 body {
   font-family: 'roboto', sans-serif;
   color: #333;
@@ -484,4 +468,69 @@ body {
 img {
   max-width: 100%;
   height:auto;
+}
+
+/* CSS files only for variables
+--> postcss-simple-vars gulp plugin does the magic */
+
+/* Created with BEM
+(Block [large.hero], Element[large.hero__text-content]),
+Modifier [large.hero__text-content--hidden])
+--> & is replaced by gulp nested postcss with .large-hero
+*/
+
+.large-hero {
+  position: relative;
+}
+
+.large-hero__text-content {
+  position: absolute;/* centering hozizantally */
+  top:50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0;/* centering vertically */
+  width: 100%;
+  text-align: center;
+}
+
+.large-hero__title {
+  font-weight:300;
+  color: #2f5572;
+  font-size:4.8rem;/* rem relative to the default font-size (~16px) of the browser/user */
+  margin:0;
+}
+
+.large-hero__subtitle {
+  font-weight:300;
+  color: #2f5572;
+  font-size:2.9rem;
+  margin:0;
+}
+
+.large-hero__description {
+  color: #FFF;
+  font-size: 1.875rem;
+  font-weight:100;
+  text-shadow: 2px 2px 0 rgba(0,0,0,.1);/* Line break (Zeilenumbruch) and centering the description*/
+  max-width:30rem;/*480px/16px(default font size)=30rem*/
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.btn {
+  color:#FFF;
+  background-color: #2f5572;
+  text-decoration: none;
+  padding: .75rem 1.2rem;
+  display: inline-block;
+
+}
+
+.btn--orange {
+  background-color: #d59541;
+}
+
+.btn--large {
+  font-size: 1.25rem;
+  padding: 1.1rem 1.9rem;
 }

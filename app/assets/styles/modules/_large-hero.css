@@ -1,14 +1,45 @@
+/* Created with BEM
+(Block [large.hero], Element[large.hero__text-content]),
+Modifier [large.hero__text-content--hidden])
+--> & is replaced by gulp nested postcss with .large-hero
+*/
+
 .large-hero {
   position: relative;
-}
 
-.large-hero__text-content {
-  position: absolute;
-  /* centering hozizantally */
-  top:50%;
-  transform: translateY(-50%);
-  left: 0;
-  /* centering vertically */
-  width: 100%;
-  text-align: center;
+  &__text-content {
+    position: absolute;
+    /* centering hozizantally */
+    top:50%;
+    transform: translateY(-50%);
+    left: 0;
+    /* centering vertically */
+    width: 100%;
+    text-align: center;
+  }
+
+  &__title {
+    font-weight:300;
+    color: $mainBlue;
+    font-size:4.8rem;
+    /* rem relative to the default font-size (~16px) of the browser/user */
+    margin:0;
+  }
+
+  &__subtitle {
+    font-weight:300;
+    color: $mainBlue;
+    font-size:2.9rem;
+    margin:0;
+  }
+  &__description {
+    color: #FFF;
+    font-size: 1.875rem;
+    font-weight:100;
+    text-shadow: 2px 2px 0 rgba(0,0,0,.1);
+    /* Line break (Zeilenumbruch) and centering the description*/
+    max-width:30rem; /*480px/16px(default font size)=30rem*/
+    margin-left:auto;
+    margin-right:auto;
+  }
 }
