@@ -1,0 +1,128 @@
+.site-header {
+  position: absolute;
+  z-index: 2;
+  width:100%;
+  padding: 10px 0;
+  transition: background-color .3s ease-out; /* MobileMenu fade-in effect */
+
+  @mixin atMedium {
+    background-color: rgba(47, 85, 114, 0.3);
+    padding:0;
+  }
+
+  &--is-expanded {
+    background-color: rgba(47, 85, 114, 0.55);
+  }
+
+  &__btn-container {
+
+    @mixin atMedium {
+      float: right;
+      padding-top: 12px;
+    }
+  }
+
+  &__logo {
+    position:absolute;
+    background-color: $mainBlue;
+    padding: 25px 36px;
+    top: 0;
+    /* Center logo and shrink on small screens */
+    left: 50%;
+    transform: translateX(-50%) scale(.8);
+    transform-origin: 50% 0;
+
+    @mixin atMedium {
+      left:auto;
+      transform: translate(0);
+    }
+  }
+  &__menu-icon {
+    width: 20px;
+    height: 19px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+
+    &::before {
+      content:"";
+      position: absolute;
+      top: 0;
+      left:0;
+      width: 20px;
+      height: 3px;
+      background-color: #fff;
+      transform-origin: 0 0; /*Tells the browser to rotate this element arround the left-top edge*/
+      transition: transform .3s ease-out;
+    }
+
+    &__middle {
+      position: absolute;
+      top: 8px;
+      left:0;
+      width: 20px;
+      height: 3px;
+      background-color: #fff;
+      transition: all .3s ease-out;
+    }
+
+    &::after {
+      content:"";
+      position: absolute;
+      bottom:0;
+      left:0;
+      width: 20px;
+      height: 3px;
+      background-color: #fff;
+      transform-origin: 0 100%; /*Tells the browser to rotate this element arround the left-bottom edge*/
+      transition: transform .3s ease-out;
+    }
+
+    @mixin atMedium {
+      display: none;
+    }
+  }
+
+  &__menu-icon--close-x {
+    &>div {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    &::before {
+      transform: rotate(45deg) scaleX(1.25); /* increases x-axis by 25% */
+    }
+    &::after {
+      transform: rotate(-45deg) scaleX(1.25) translateY(1px); /* increases x-axis by 25% */
+    }
+
+  }
+
+
+  &__menu-content {
+    opacity:0;
+    /* ~ same as display: none; --> needed for fade in effect */
+    position:relative;
+    z-index: -10;
+    /* Make sure invisible content isnt clicked by accident */
+    transition: all .3s ease-out;
+    /* Menu gets faded in */
+    transform: scale(1.2);
+    /* Part of Zoom in effect */
+    padding-top: 90px;
+    text-align: center;
+
+    @mixin atMedium {
+      opacity: 1;
+      z-index: 1;
+      padding-top: 0;
+      transform: scale(1);
+    }
+    &--is-visible {
+      opacity: 1;
+      z-index: 1;
+      /* ~ same as display: block; --> needed for fade in effect */
+      transform: scale(1);
+    }
+  }
+}

@@ -13,6 +13,7 @@ Modifier [large.hero__text-content--hidden])
   }
 
   &__text-content {
+    padding-top: 90px;
     position: absolute;
     /* centering hozizantally */
     top:50%;
@@ -21,6 +22,10 @@ Modifier [large.hero__text-content--hidden])
     /* centering vertically */
     width: 100%;
     text-align: center;
+
+    @mixin atMedium {
+      padding-top: 60px;
+    }
   }
 
   &__title {

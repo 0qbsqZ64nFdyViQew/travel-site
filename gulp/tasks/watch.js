@@ -17,6 +17,11 @@ gulp.task('watch', function() {
   gulp.watch('./app/assets/styles/**/*.css', function() {
     gulp.start('cssInject');
   });
+
+  gulp.watch('./app/assets/scripts/**/*.js', function() {
+    gulp.start('scriptsRefresh');
+  });
+
 });
 
 /* ['styles'] is a dependency which means that it has to run and
@@ -26,4 +31,8 @@ refreshing --> .reload() would do that*/
 gulp.task('cssInject', ['styles'], function() {
   return gulp.src('./app/temp/styles/styles.css')
   .pipe(browserSync.stream());
+});
+
+gulp.task('scriptsRefresh', ['scripts'], function() {
+  browserSync.reload();
 });
