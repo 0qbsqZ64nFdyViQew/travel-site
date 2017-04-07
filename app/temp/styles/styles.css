@@ -688,6 +688,7 @@ Modifier [large.hero__text-content--hidden])
   .page-section--testimonials {
     background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
     background-size: cover;
+    background-attachment: fixed;/* COOL!!! */
   }
 }
 
@@ -1376,4 +1377,18 @@ Modifier [large.hero__text-content--hidden])
     padding: 12px 0;
     background-color: transparent;
   }
+}
+
+.reveal-item {
+  opacity: 0;
+  -webkit-transition: all 1.5s ease-out;
+  transition: all 1.5s ease-out;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+.reveal-item--is-visible {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
