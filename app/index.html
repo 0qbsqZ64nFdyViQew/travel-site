@@ -7,6 +7,7 @@
   <meta name="keywords" content="Bla,Bla,Bla,Travel planning, travel bundles, travel escapes">
   <meta name="description" content="Your clarity. One trip away. We create soul restoring journeys that inspire you to be you.">
 <link rel="stylesheet" href="../temp/styles/styles.css" />
+<script src="../temp/scripts/Vendor.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -115,16 +116,19 @@
   </div>
 </div>
 
-  <div class="page-section page-section--no-b-padding-until-large page-section--testimonials" id="testimonials" data-matching-link="#testimonials-link">
+<!-- Lazyloading by "npm lazysizes" package: add class "lazyload" and data-srcset insted of srcset
+CSS class "lazyload" will change to "lazyloaded"-->
+  <div class="page-section page-section--no-b-padding-until-large page-section--testimonials lazyload" id="testimonials" data-matching-link="#testimonials-link">
     <div class="wrapper wrapper--no-padding-until-large">
 
       <h2 class="section-title section-title--blue"><span class="icon icon--comment section-title__icon"></span>Real <strong>Testimonials</strong></h2>
+
 
     <div class="row row--gutters row--gutters-small row--equal-height-at-large row--t-padding gerneric-content-container">
       <div class="row__large-4">
         <div class="testimonial">
           <div class="testimonial--photo">
-          	<img sizes="160px" srcset="assets/images/testimonial-jane.jpg 160w, assets/images/testimonial-jane-hi-dpi.jpg 320w" alt="Jane Doe">
+          	<img sizes="160px" class="lazyload" data-srcset="assets/images/testimonial-jane.jpg 160w, assets/images/testimonial-jane-hi-dpi.jpg 320w" alt="Jane Doe">
           </div>
           <h3 class="testimonial__title">Jane Doe</h3>
           <h4 class="testimonial__sub-title">9 Time Escaper</h4>
@@ -134,7 +138,7 @@
       <div class="row__large-4">
         <div class="testimonial">
           <div class="testimonial--photo" alt="John Smith">
-            <img sizes="160px" srcset="assets/images/testimonial-john.jpg 160w, assets/images/testimonial-john-hi-dpi.jpg 320w" alt="John Smith">
+            <img sizes="160px" class="lazyload" data-srcset="assets/images/testimonial-john.jpg 160w, assets/images/testimonial-john-hi-dpi.jpg 320w" alt="John Smith">
           </div>
           <h3 class="testimonial__title">John Smith</h3>
           <h4 class="testimonial__sub-title">4 Time Escaper</h4>
@@ -144,7 +148,7 @@
       <div class="row__large-4">
         <div class="testimonial testimonial--last">
           <div class="testimonial--photo">
-            <img sizes="160px" srcset="assets/images/testimonial-cat.jpg 160w, assets/images/testimonial-cat-hi-dpi.jpg 320w" alt="Kitty">
+            <img sizes="160px" class="lazyload" data-srcset="assets/images/testimonial-cat.jpg 160w, assets/images/testimonial-cat-hi-dpi.jpg 320w" alt="Kitty">
           </div>
           <h3 class="testimonial__title">Cat McKitty</h3>
           <h4 class="testimonial__sub-title">6 Time Escaper</h4>
