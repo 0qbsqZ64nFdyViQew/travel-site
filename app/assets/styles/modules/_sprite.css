@@ -1,6 +1,6 @@
 /*#first = dont repeat backgroundimage for every picture in the sprite*/
     .icon {
-      background-image: url('/assets/images/sprites/sprite-8eb89099.svg');
+      background-image: url('../../assets/images/sprites/sprite-8eb89099.svg');
     }
 
   .icon--clear-view-escapes {

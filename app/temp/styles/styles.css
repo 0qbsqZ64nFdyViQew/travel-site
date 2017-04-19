@@ -690,7 +690,7 @@ Modifier [large.hero__text-content--hidden])
 @media (min-width: 1010px) {
 
   .page-section--testimonials.lazyloaded {
-    background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+    background: url('../../assets/images/testimonials-bg.jpg') top center no-repeat;
     background-size: cover;
     background-attachment: fixed;/* COOL!!! */
   }
@@ -1038,7 +1038,7 @@ Modifier [large.hero__text-content--hidden])
 /*#first = dont repeat backgroundimage for every picture in the sprite*/
 
 .icon {
-      background-image: url('/assets/images/sprites/sprite-8eb89099.svg');
+      background-image: url('../../assets/images/sprites/sprite-8eb89099.svg');
     }
 
 .icon--clear-view-escapes {

@@ -2,7 +2,7 @@
 /*#first = dont repeat backgroundimage for every picture in the sprite*/
   {{#first}}
     .icon {
-      background-image: url('/assets/images/sprites/{{{sprite}}}');
+      background-image: url('../../assets/images/sprites/{{{sprite}}}');
     }
   {{/first}}
 
@@ -11,4 +11,4 @@
     height: {{height.outer}}px;
     background-position: {{position.relative.xy}};
   }
-{{/shapes}}
+{{/shapes}}   

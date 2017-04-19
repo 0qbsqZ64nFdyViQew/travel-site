@@ -23,7 +23,7 @@ var config = {
 
 gulp.task('beginClean', function(){
   return del(['./app/temp/sprites','./app/assets/images/sprites']);
-});
+}); 
 
 gulp.task('createSprite', ['beginClean'], function(){
   return gulp.src('./app/assets/images/icons/**/*.svg')
